@@ -1,24 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import "./index.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Header from "./components/Navbar";
+import Home from "./views/Home";
+import Pokemons from "./views/Pokemons";
+import PokemonStats from "./views/PokemonStats";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <BrowserRouter>
+        <Header />
+        <Routes>
+          <Route
+            path="/"
+            element={
+                <Home />
+            }
+          />
+          <Route
+            path="/pokemons"
+            element={
+              <Pokemons />
+            }
+            />
+          <Route
+            path="/pokemons/:pokeName"
+            element={
+                <PokemonStats />
+            }
+          />
+          <Route
+            path="*"
+            element={<h1 className="mt-5 text-center">404 Not Found. Please go back</h1>}
+          />
+        </Routes>
+      </BrowserRouter>
+    </>
   );
 }
 

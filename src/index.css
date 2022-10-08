@@ -11,3 +11,30 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+.navbar a {
+  padding: 0.5em;
+  text-decoration: none;
+}
+
+.unactive {
+  color:white;
+}
+.active {
+  color: black;
+}
+.navbar a:hover {
+  color: black;
+}
+
+.navbar-brand {
+  padding-left: 2em;
+}
+.navbar-brand img {
+  height: 2em;
+}
+
+.pikachu-img {
+  width: 24em;
+}
